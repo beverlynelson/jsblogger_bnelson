@@ -1,0 +1,15 @@
+<div class="flash"><p><%= flash[:message] %></p></div>
+<h1>All Articles </h1>
+<ul>
+	<% @articles.each do |article| %>
+		<li>
+			  <b><%= link_to article.title, article_path(article) %></b><br/>
+			  <%= article.body %>
+			<i>Actions:
+			<%= link_to "edit", edit_article_path(article) %>,
+			<%= link_to "remove", article, :method => :delete, :confirm => "Remove the article '#{article.title}'?"%>  
+			</i>
+		</li>
+	<% end %>
+	<%= link_to "Create a new article", new_article_path%>
+</ul>

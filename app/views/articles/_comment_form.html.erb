@@ -1,0 +1,27 @@
+<h3>Post a Comment</h3>
+
+<%= form_for @comment do |f| %>
+   <%= f.hidden_field :article_id, :value => @article.id %>
+
+	<p>
+		<%= f.label :Your_name %><br>
+		<%= f.text_field :author_name %>
+	</p>
+	<p>
+		<%= f.label :Your_email %><br>
+		<%= f.text_field :author_email %>
+	</p>
+	<p>
+		<%= f.label :Website %><br>
+		<%= f.text_field :author_url %>
+	</p>
+	<p>
+		<%= f.label :Comment %><br>
+		<%= f.text_field :body %>
+	</p>
+	<p>
+		<%= f.submit 'Submit' %>
+	</p>
+<% end %>
+
+			
